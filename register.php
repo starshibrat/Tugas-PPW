@@ -6,7 +6,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="/services/register.php" method="post">
+    <form action="services/register.php" method="post">
         <label for="username" id="username" name="username">
             Username
         </label>
@@ -29,7 +29,7 @@
         <input type="submit" value="Register">
 
     </form>
-    <a href="index.html">Sudah punya akun? Login disini</a>
+    <a href="index.php">Sudah punya akun? Login disini</a>
     
 </body>
 </html>
