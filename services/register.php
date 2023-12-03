@@ -11,11 +11,12 @@ if ($conn->connect_error) {
     die('Connection Failed: ' . $conn->connect_error);
 } else {
 
-    $sql = "INSERT INTO users (NIM, USERNAME, EMAIL, PASSWORD) VALUES(\"$nim\", \"$username\", \"$email\",\"$password\")";
+    $sql1 = "INSERT INTO users (NIM, USERNAME, EMAIL, PASSWORD) VALUES(\"$nim\", \"$username\", \"$email\",\"$password\")";
+    $sql2 = "INSERT INTO data_mahasiswa (NIM, EMAIL) VALUES(\"$nim\", \"$email\")";
 
-    if ($conn->query($sql) === TRUE){
+    if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE){
         echo "User successfully registered";
-        echo "<a href='../pages/dashboard.php'>Click here to go to dashboard</a>";
+        echo "<a href='../pages/index.php'>Click here to login</a>";
     } else {
         echo "Failed to create user";
     }

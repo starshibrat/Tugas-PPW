@@ -2,7 +2,9 @@
 
 session_start();
 
-
+if($_SESSION['id'] == -1){
+    header("Location: ../index.php");
+}
 
 ?>
 
@@ -16,6 +18,14 @@ session_start();
 </head>
 
 <body>
+    <ul>
+        <li>Home</li>
+        <li><a href="biodata.php">Biodata</a></li>
+        <li><a href="../services/logout.php">Logout</a></li>
+
+    </ul>
+
+    
 
 </body>
 

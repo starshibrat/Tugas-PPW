@@ -5,6 +5,7 @@ $b = rand(1, 9);
 $_SESSION['a'] = $a;
 $_SESSION['b'] = $b;
 $_SESSION['id'] = -1;
+$_SESSION["logged_in"] = false;
 
 ?>
 
