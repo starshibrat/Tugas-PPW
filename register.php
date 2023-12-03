@@ -7,23 +7,23 @@
 </head>
 <body>
     <form action="services/register.php" method="post">
-        <label for="username" id="username" name="username">
+        <label for="username" >
             Username
         </label>
-        <input type="text" placeholder="Username" required/>
-        <label for="nim" id="nim" name="nim">
+        <input type="text" placeholder="Username" id="username" name="username" required/>
+        <label for="nim">
             NIM
         </label>
-        <input type="text" placeholder="NIM" required/>
-        <label for="email" id="email" name="email">
+        <input type="text" placeholder="NIM"  id="nim" name="nim" required/>
+        <label for="email">
             Email
         </label>
-        <input type="email" placeholder="myemail@themail.com" required/>
+        <input type="email" placeholder="myemail@themail.com"  id="email" name="email" required/>
 
-        <label for="password" id="password" name="password">
+        <label for="password">
             Password
         </label>
-        <input type="password" placeholder="Password" required/>
+        <input type="password"  id="password" name="password" placeholder="Password" required/>
         
 
         <input type="submit" value="Register">

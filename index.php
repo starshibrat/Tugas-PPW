@@ -4,6 +4,7 @@ $a = rand(1, 9);
 $b = rand(1, 9);
 $_SESSION['a'] = $a;
 $_SESSION['b'] = $b;
+$_SESSION['id'] = -1;
 
 ?>
 
@@ -21,11 +22,11 @@ $_SESSION['b'] = $b;
         <label for="username">
             Username
         </label>
-        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Username" id="username" name="username">
         <label for="password">
             Password
         </label>
-        <input type="password" placeholder="Password">
+        <input type="password" id="password" name="password" placeholder="Password">
         <label for="captcha">
             Captcha
         </label>

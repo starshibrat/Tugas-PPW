@@ -11,7 +11,24 @@ if (!$captcha_check){
     echo "Wrong Captcha!";
     header("Location: ../index.php");
 } else {
-    echo "Login Succsss";
+    
+    $conn = new mysqli('localhost', 'root', '123456', 'akadsi');
+
+    $sql = "SELECT USERNAME, PASSWORD FROM users WHERE USERNAME = '$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0){
+        $row = $result->fetch_assoc();
+        if ($password == $row["PASSWORD"]){
+            header("Location: ../pages/dashboard.php");
+        } else {
+            echo "Wrong username or password";
+        }
+    } else {
+        echo "Wrong username or password";
+    }
+    
+    
 }
 
 ?>
