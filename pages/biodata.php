@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["NIM"] = -1;
 
 if ($_SESSION['id'] == -1) {
     header("Location: ../index.php");
@@ -19,7 +18,7 @@ if ($conn->connect_error) {
     $row = $result->fetch_assoc();
 
     $nim = $row["NIM"];
-    $SESSION["NIM"] = $nim;
+    $_SESSION["NIM"] = $nim;
 
 
     $conn = new mysqli('localhost', 'root', '123456', 'akadsi');
@@ -67,6 +66,7 @@ if ($conn->connect_error) {
     <ul>
         <li><a href="dashboard.php">Home</a></li>
         <li>Biodata</li>
+        <li><a href="krs.php">KRS</a></li>
         <li><a href="../services/logout.php">Logout</a></li>
 
     </ul>

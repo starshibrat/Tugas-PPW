@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
     if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE){
         echo "User successfully registered";
-        echo "<a href='../pages/index.php'>Click here to login</a>";
+        echo "<a href='../index.php'>Click here to login</a>";
     } else {
         echo "Failed to create user";
     }

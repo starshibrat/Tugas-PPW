@@ -21,6 +21,7 @@ if($_SESSION['id'] == -1){
     <ul>
         <li>Home</li>
         <li><a href="biodata.php">Biodata</a></li>
+        <li><a href="krs.php">KRS</a></li>
         <li><a href="../services/logout.php">Logout</a></li>
 
     </ul>

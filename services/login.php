@@ -18,7 +18,7 @@ if (!$captcha_check) {
         die('Connection Failed: ' . $conn->connect_error);
     } else {
 
-        $sql = "SELECT id, USERNAME, PASSWORD FROM users WHERE USERNAME = '$username'";
+        $sql = "SELECT * FROM users WHERE USERNAME = '$username'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -26,6 +26,7 @@ if (!$captcha_check) {
             if ($password == $row["PASSWORD"]) {
                 $_SESSION["logged_in"] = true;
                 $_SESSION["id"] = $row["id"];
+                $_SESSION["NIM"] = $row["NIM"];
                 header("Location: ../pages/dashboard.php");
 
             } else {
