@@ -36,6 +36,15 @@ $nim = $_SESSION["NIM"];
         $row = $result->fetch_assoc();
         $cs = $row["COURSES"];
 
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>Kode Mata Kuliah</th>";
+        echo "<th>Nama Mata Kuliah</th>";
+        echo "<th>Dosen</th>";
+        echo "<th>Jadwal</th>";
+        echo "<th>Tempat</th>";
+        echo "<th>Sks</th>";
+        echo "</tr>";
 
         for ($i = 0; $i < strlen($cs); $i += 3) {
             $csid = $cs[$i] . $cs[$i + 1] . $cs[$i + 2];
@@ -49,11 +58,20 @@ $nim = $_SESSION["NIM"];
             $jadwal = $row1["JADWAL"];
             $tempat = $row1["TEMPAT"];
             $sks = $row1["SKS"];
+            echo "<tr>";
 
-            echo "$courseid\t|\t$name\t|\t$dosen\t|\t$jadwal\t|\t$tempat\t|\t$sks";
-            echo '<br>';
+            echo "<td>$courseid</td>";
+            echo "<td>$name</td>";
+            echo "<td>$dosen</td>";
+            echo "<td>$jadwal</td>";
+            echo "<td>$tempat</td>";
+            echo "<td>$sks</td>";
+
+
+            echo '</tr>';
 
         }
+        echo "</table>";
 
 
 

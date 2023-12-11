@@ -15,7 +15,15 @@ if ($conn->connect_error) {
     $sql = "SELECT * FROM course";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>Kode Mata Kuliah</th>";
+        echo "<th>Nama Mata Kuliah</th>";
+        echo "<th>Dosen</th>";
+        echo "<th>Jadwal</th>";
+        echo "<th>Tempat</th>";
+        echo "<th>Sks</th>";
+        echo "</tr>";
 
         while ($row = $result->fetch_assoc()) {
             $name = $row["NAMA"];
@@ -25,8 +33,19 @@ if ($conn->connect_error) {
             $tempat = $row["TEMPAT"];
             $sks = $row["SKS"];
 
-            echo "$courseid\t|\t$name\t|\t$dosen\t|\t$jadwal\t|\t$tempat\t|\t$sks";
+            echo "<tr>";
 
+            echo "<td>$courseid</td>";
+            echo "<td>$name</td>";
+            echo "<td>$dosen</td>";
+            echo "<td>$jadwal</td>";
+            echo "<td>$tempat</td>";
+            echo "<td>$sks</td>";
+
+
+            
+
+            echo "<td>";
             echo "<form action='../services/addcourse.php' method='post'>
             <input type='hidden' name='nim' id='nim' value='".$nim."'>
             <input type='hidden' name='courseid' id='courseid' value='".$courseid."'>
@@ -34,10 +53,12 @@ if ($conn->connect_error) {
             
             </form>
             ";
+            echo "</td>";
 
-            echo "<br>";
+            echo '</tr>';
 
         }
+        echo "</table>";
 
     }
 
