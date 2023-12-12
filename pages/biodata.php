@@ -60,58 +60,117 @@ if ($conn->connect_error) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <ul>
-        <li><a href="dashboard.php">Home</a></li>
-        <li>Biodata</li>
-        <li><a href="krs.php">KRS</a></li>
-        <li><a href="../services/logout.php">Logout</a></li>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="dashboard.php">Home</a></li>
+        <li class="list-group-item active">Biodata</li>
+        <li class="list-group-item"><a href="krs.php">KRS</a></li>
+        <li class="list-group-item"><a href="../services/logout.php">Logout</a></li>
 
     </ul>
 
     <h1>Biodata Mahasiswa</h1>
-    <form action='../services/update.php' method='post'>
-        <input type='hidden' id='NIM' name='NIM' value=<?php echo $nim; ?>>
-        <label for='NAMA'>NAMA</label>
-        <input type='text' id='NAMA' name='NAMA' value=<?php echo $NAMA; ?>>
-        <label for='ALAMAT'>ALAMAT</label>
-        <input type='text' id='ALAMAT' name='ALAMAT' value=<?php echo $ALAMAT; ?>>
-        <label for='TEMPAT_LAHIR'>TEMPAT_LAHIR</label>
-        <input type='text' id='TEMPAT_LAHIR' name='TEMPAT_LAHIR' value=<?php echo $TEMPAT_LAHIR; ?>>
-        <label for='JENIS_KELAMIN'>JENIS_KELAMIN</label>
-        <input type='text' id='JENIS_KELAMIN' name='JENIS_KELAMIN' value=<?php echo $JENIS_KELAMIN; ?>>
-        <label for='AGAMA'>AGAMA</label>
-        <input type='text' id='AGAMA' name='AGAMA' value=<?php echo $AGAMA ?>>
-        <label for='KEWARGANEGARAAN'>KEWARGANEGARAAN</label>
-        <input type='text' id='KEWARGANEGARAAN' name='KEWARGANEGARAAN' value=<?php echo $KEWARGANEGARAAN; ?>>
-        <label for='JENIS_TINGGAL'>JENIS_TINGGAL</label>
-        <input type='text' id='JENIS_TINGGAL' name='JENIS_TINGGAL' value=<?php echo $JENIS_TINGGAL; ?>>
-        <label for='TRANSPORTASI'>TRANSPORTASI</label>
-        <input type='text' id='TRANSPORTASI' name='TRANSPORTASI' value=<?php echo $TRANSPORTASI; ?>>
-        <label for='PROVINSI'>PROVINSI</label>
-        <input type='text' id='PROVINSI' name='PROVINSI' value=<?php echo $PROVINSI; ?>>
-        <label for='KABUPATEN'>KABUPATEN</label>
-        <input type='text' id='KABUPATEN' name='KABUPATEN' value=<?php echo $KABUPATEN; ?>>
-        <label for='KECAMATAN'>KECAMATAN</label>
-        <input type='text' id='KECAMATAN' name='KECAMATAN' value=<?php echo $KECAMATAN; ?>>
-        <label for='NOTELP'>NOTELP</label>
-        <input type='text' id='NOTELP' name='NOTELP' value=<?php echo $NOTELP; ?>>
-        <label for='NOHP'>NOHP</label>
-        <input type='text' id='NOHP' name='NOHP' value=<?php echo $NOHP; ?>>
-        <label for='EMAIL'>EMAIL</label>
-        <input type='text' id='EMAIL' name='EMAIL' value=<?php echo $EMAIL; ?>>
-        <label for='NIK'>NIK</label>
-        <input type='text' id='NIK' name='NIK' value=<?php echo $NIK; ?>>
-        <label for='NPWP'>NPWP</label>
-        <input type='text' id='NPWP' name='NPWP' value=<?php echo $NPWP;?>>
-        <label for='KPS'>KPS</label>
-        <input type='text' id='KPS' name='KPS' value=<?php echo $KPS; ?>>
+    <div class="container-fluid w-100 p-3">
+        <form action='../services/update.php' method='post'>
+            <input type='hidden' id='NIM' name='NIM' value=<?php echo $nim; ?>>
+            <div class="form-group m-2">
+                <label for='NAMA'>NAMA</label>
+                <br>
+                <input type='text' id='NAMA' name='NAMA' value=<?php echo $NAMA; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='ALAMAT'>ALAMAT</label>
+                <br>
+                <input type='text' id='ALAMAT' name='ALAMAT' value=<?php echo $ALAMAT; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='TEMPAT_LAHIR'>TEMPAT_LAHIR</label>
+                <br>
+                <input type='text' id='TEMPAT_LAHIR' name='TEMPAT_LAHIR' value=<?php echo $TEMPAT_LAHIR; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='JENIS_KELAMIN'>JENIS_KELAMIN</label>
+                <br>
+                <input type='text' id='JENIS_KELAMIN' name='JENIS_KELAMIN' value=<?php echo $JENIS_KELAMIN; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='AGAMA'>AGAMA</label>
+                <br>
+                <input type='text' id='AGAMA' name='AGAMA' value=<?php echo $AGAMA ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='KEWARGANEGARAAN'>KEWARGANEGARAAN</label>
+                <br>
+                <input type='text' id='KEWARGANEGARAAN' name='KEWARGANEGARAAN' value=<?php echo $KEWARGANEGARAAN; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='JENIS_TINGGAL'>JENIS_TINGGAL</label>
+                <br>
+                <input type='text' id='JENIS_TINGGAL' name='JENIS_TINGGAL' value=<?php echo $JENIS_TINGGAL; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='TRANSPORTASI'>TRANSPORTASI</label>
+                <br>
+                <input type='text' id='TRANSPORTASI' name='TRANSPORTASI' value=<?php echo $TRANSPORTASI; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='PROVINSI'>PROVINSI</label>
+                <br>
+                <input type='text' id='PROVINSI' name='PROVINSI' value=<?php echo $PROVINSI; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='KABUPATEN'>KABUPATEN</label>
+                <br>
+                <input type='text' id='KABUPATEN' name='KABUPATEN' value=<?php echo $KABUPATEN; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='KECAMATAN'>KECAMATAN</label>
+                <br>
+                <input type='text' id='KECAMATAN' name='KECAMATAN' value=<?php echo $KECAMATAN; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='NOTELP'>NOTELP</label>
+                <br>
+                <input type='text' id='NOTELP' name='NOTELP' value=<?php echo $NOTELP; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='NOHP'>NOHP</label>
+                <br>
+                <input type='text' id='NOHP' name='NOHP' value=<?php echo $NOHP; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='EMAIL'>EMAIL</label>
+                <br>
+                <input type='text' id='EMAIL' name='EMAIL' value=<?php echo $EMAIL; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='NIK'>NIK</label>
+                <br>
+                <input type='text' id='NIK' name='NIK' value=<?php echo $NIK; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='NPWP'>NPWP</label>
+                <br>
+                <input type='text' id='NPWP' name='NPWP' value=<?php echo $NPWP; ?>>
+            </div>
+            <div class="form-group m-2">
+                <label for='KPS'>KPS</label>
+                <br>
+                <input type='text' id='KPS' name='KPS' value=<?php echo $KPS; ?>>
+            </div>
+            <div class="form-group m-2">
 
-        <input type="submit" value="Save">
-    </form>
-
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

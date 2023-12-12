@@ -13,14 +13,15 @@ $nim = $_SESSION["NIM"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KRS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <ul>
-        <li><a href="dashboard.php">Home</a></li>
-        <li><a href="biodata.php">Biodata</a></li>
-        <li>KRS</li>
-        <li><a href="../services/logout.php">Logout</a></li>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="dashboard.php">Home</a></li>
+        <li class="list-group-item"><a href="biodata.php">Biodata</a></li>
+        <li class="list-group-item active">KRS</li>
+        <li class="list-group-item"><a href="../services/logout.php">Logout</a></li>
 
     </ul>
     <h1>KRS</h1>
@@ -36,7 +37,8 @@ $nim = $_SESSION["NIM"];
         $row = $result->fetch_assoc();
         $cs = $row["COURSES"];
 
-        echo "<table border='1'>";
+        echo "<table class='table'>";
+        echo "<thead>";
         echo "<tr>";
         echo "<th>Kode Mata Kuliah</th>";
         echo "<th>Nama Mata Kuliah</th>";
@@ -45,6 +47,7 @@ $nim = $_SESSION["NIM"];
         echo "<th>Tempat</th>";
         echo "<th>Sks</th>";
         echo "</tr>";
+        echo "</thead>";
 
         for ($i = 0; $i < strlen($cs); $i += 3) {
             $csid = $cs[$i] . $cs[$i + 1] . $cs[$i + 2];
@@ -78,7 +81,7 @@ $nim = $_SESSION["NIM"];
     }
 
     ?>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
