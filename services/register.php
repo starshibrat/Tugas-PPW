@@ -15,6 +15,9 @@ if ($conn->connect_error) {
     $sql2 = "INSERT INTO data_mahasiswa (NIM, EMAIL) VALUES(\"$nim\", \"$email\")";
 
     if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE){
+        if ($_SESSION['is_admin'] == true) {
+            header("Location: ../admin_panel/index.php");
+        }
         echo "User successfully registered";
         echo "<a href='../index.php'>Click here to login</a>";
     } else {
