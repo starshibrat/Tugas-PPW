@@ -18,6 +18,22 @@ if (!$captcha_check) {
         die('Connection Failed: ' . $conn->connect_error);
     } else {
 
+        $sql = "SELECT * FROM admin_user WHERE username = '$username'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if ($password == $row["password"]) {
+                $_SESSION["id"] = $row["id"];
+                $_SESSION["user"] = $username;
+                $_SESSION["is_admin"] = true;
+                header("Location: ../admin_panel/index.php");
+
+            }
+
+        }
+
+
+
         $sql = "SELECT * FROM users WHERE USERNAME = '$username'";
         $result = $conn->query($sql);
 
