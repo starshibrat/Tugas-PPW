@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION["is_admin"] = false;
 $conn = new mysqli('localhost', 'root', '123456', 'akadsi');
 
 $nim = $_POST['nim'];

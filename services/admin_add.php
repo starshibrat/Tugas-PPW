@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION["is_admin"] = true;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

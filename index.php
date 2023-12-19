@@ -1,11 +1,14 @@
 <?php
-session_start();
+include('google_config.php');
+include('services/db_connect.php');
 $a = rand(1, 9);
 $b = rand(1, 9);
 $_SESSION['a'] = $a;
 $_SESSION['b'] = $b;
-$_SESSION['id'] = -1;
-$_SESSION["logged_in"] = false;
+
+$_SESSION["id"] = -1;
+$_SESSION['logged_in'] = false;
+
 
 ?>
 
@@ -21,8 +24,9 @@ $_SESSION["logged_in"] = false;
 </head>
 
 <body>
+    <script src="https://accounts.google.com/gsi/client" async></script>
     <div class="m-3 w-25 bg-light p-3">
-    <h1 class="display-2 mb-3">Login</h1>
+        <h1 class="display-2 mb-3">Login</h1>
         <form action="services/login.php" method="post">
             <div class='input-group mb-3'>
                 <input type="text" class='form-control' placeholder="Username" id="username" name="username">
@@ -41,6 +45,10 @@ $_SESSION["logged_in"] = false;
             <button type="submit" class="btn btn-primary">Login</button>
 
         </form>
+        <a href="<?php echo $client->createAuthUrl() ?>">
+
+            <h2 class="display-4">Login With Google</h2>
+        </a>
 
         <a href="register.php">Belum punya akun? Register disini</a>
     </div>

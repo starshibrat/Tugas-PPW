@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,17 +18,20 @@
         <h1 class="display-2 mb-3">Register</h1>
         <form action="services/register.php" method="post">
             <div class='input-group mb-3'>
-                <input type="text" class='w-75 form-control' placeholder="Username" id="username" name="username" required />
+                <input type="text" class='w-75 form-control' placeholder="Username" id="username" name="username"
+                    required />
             </div>
             <div class='input-group mb-3'>
                 <input type="text" class='w-75 form-control' placeholder="NIM" id="nim" name="nim" required />
             </div>
             <div class='input-group mb-3'>
-                <input type="email" placeholder="myemail@themail.com" class='w-75 form-control'id="email" name="email" required />
+                <input type="email" placeholder="myemail@themail.com" class='w-75 form-control' id="email" name="email"
+                    required />
             </div>
 
             <div class='input-group mb-3'>
-                <input type="password" id="password" name="password" class='w-75 form-control' placeholder="Password" required />
+                <input type="password" id="password" name="password" class='w-75 form-control' placeholder="Password"
+                    required />
             </div>
 
 

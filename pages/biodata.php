@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-if ($_SESSION['id'] == -1) {
+
+if ($_SESSION['id'] == -1 && $_SESSION['logged_in'] == false) {
     header("Location: ../index.php");
 }
 
@@ -29,7 +30,10 @@ if ($conn->connect_error) {
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
 
+        $id_mhw = $row["id"];
+
         $NAMA = $row["NAMA"];
+        $NIM = $row["NIM"];
         $ALAMAT = $row["ALAMAT"];
         $TEMPAT_LAHIR = $row["TEMPAT_LAHIR"];
         $JENIS_KELAMIN = $row["JENIS_KELAMIN"];
@@ -76,7 +80,7 @@ if ($conn->connect_error) {
     <h1>Biodata Mahasiswa</h1>
     <div class="container-fluid w-100 p-3">
         <form action='../services/update.php' method='post'>
-            <input type='hidden' id='NIM' name='NIM' value=<?php echo $nim; ?>>
+            <input type='hidden' id='NIM' name='NIM' value=<?php echo $NIM; ?>>
             <div class="form-group m-2">
                 <label for='NAMA'>NAMA</label>
                 <br>

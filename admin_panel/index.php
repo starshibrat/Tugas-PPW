@@ -4,6 +4,7 @@ session_start();
 $id = $_SESSION["id"];
 $user = $_SESSION["user"];
 
+
 if ($_SESSION['is_admin'] == false) {
     header("Location: ../index.php");
 }
