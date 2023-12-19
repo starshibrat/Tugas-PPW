@@ -3,7 +3,7 @@
 session_start();
 $nim = $_SESSION["NIM"];
 
-if ($_SESSION['id'] == -1) {
+if ($_SESSION['id'] == -1 && $_SESSION['logged_in'] == false) {
     header("Location: ../index.php");
 }
 $id = $_SESSION['id'];
@@ -31,6 +31,7 @@ if ($conn->connect_error) {
         $row = $result->fetch_assoc();
 
         $NAMA = $row["NAMA"];
+        $NIM = $row["NIM"];
         $ALAMAT = $row["ALAMAT"];
         $TEMPAT_LAHIR = $row["TEMPAT_LAHIR"];
         $JENIS_KELAMIN = $row["JENIS_KELAMIN"];
@@ -47,7 +48,12 @@ if ($conn->connect_error) {
         $NIK = $row["NIK"];
         $NPWP = $row["NPWP"];
         $KPS = $row["KPS"];
+
+        $nim = $row["NIM"];
+
+
     }
+
 }
 
 ?>
@@ -79,6 +85,12 @@ if ($conn->connect_error) {
             <div class="ms-2 me-auto">
                 <div class="fw-bold">Nama</div>
                 <?php echo $NAMA; ?>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">NIM</div>
+                <?php echo $NIM; ?>
             </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">

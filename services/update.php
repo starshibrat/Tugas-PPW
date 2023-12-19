@@ -1,7 +1,7 @@
 <?php
 session_start();
+// $id_mhw = $_POST['ID'];
 $NIM = $_POST['NIM'];
-
 $NAMA = $_POST["NAMA"];
 $ALAMAT = $_POST["ALAMAT"];
 $TEMPAT_LAHIR = $_POST["TEMPAT_LAHIR"];

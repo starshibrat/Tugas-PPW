@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if($_SESSION['id'] == -1){
+if($_SESSION['id'] == -1 && $_SESSION['logged_in'] == false){
     header("Location: ../index.php");
 }
 $nim = $_SESSION["NIM"];
